@@ -20,11 +20,11 @@ class Eth_hdr:
         if self.payload == None:
             return None
         return mac_to_bytes(self.dst_mac) + mac_to_bytes(self.src_mac) + struct.pack("!H",
-                                                                                     self.length) + self.payload.to_bytes()
+                                                                                     self.length) + self.payload.to_bytes
 
     def add_payload(self, payload):
         self.payload = payload
-        self.length = len(payload.to_bytes())
+        self.length = len(payload.to_bytes)
 
 
 class Llc_hdr:
@@ -41,7 +41,7 @@ class Llc_hdr:
 
     def to_bytes(self):
         return struct.pack("!3B", self.dsap, self.ssap, self.ctrl) + mac_to_bytes(self.oui) + struct.pack("!H",
-                                                                                                          self.pid) + self.payload.to_bytes()
+                                                                                                          self.pid) + self.payload.to_bytes
 
 
 class CDP_hdr:
@@ -57,7 +57,7 @@ class CDP_hdr:
     def to_bytes(self):
         payload_bytes = bytes()
         for payload in self.payload:
-            payload_bytes += payload.to_bytes()
+            payload_bytes += payload.to_bytes
         return struct.pack("!BBH", self.version, self.ttl, self.checksum) + payload_bytes
 
 
