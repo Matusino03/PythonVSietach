@@ -59,13 +59,13 @@ def nastavOkno(okno):
     textRSS.place(x=5, y=30, width=770, height=600)
     
 def akciaButton(url, textRSS):
-    vystup = parsusRSS(url)
+    vystup = parsujRSS(url)
     textRSS.delete("1.0", tk.END)
     for i in vystup:
         textRSS.insert(tk.END, i + "\n")
         
 def akciaHladaj(url, textChannel):
-    x = Youtube(url)
+    x = YouTube(url)
     Cid = x.channel_id
     Curl = x.channel_url
     
