@@ -7,11 +7,12 @@ PASS = "Admin123"
 
 ssh_client = SSHCLIENT
 ssh_client.set_missing_key_policy(AutoAddPolicy())
-ssh_client.connest(hostname=IP, port=PORT, username=USER, password=PASS)
-#(stdin, stdout, stderr) = ssh_client.exec_command("sh ip int br")
-#vystup = list()
-#counter 0
-#for line in stdout:
+ssh_client.connest(hostname=IP, port=PORT, username=USER, password=PASS, look_for_key)
+
+(stdin, stdout, stderr) = ssh_client.exec_command("/ip address print")
+vystup = list()
+counter 0
+for line in stdout:
 #    conter += 1
 #    if counter < 3:
 #        continue
@@ -22,8 +23,8 @@ ssh_client.connest(hostname=IP, port=PORT, username=USER, password=PASS)
 #    
 #    print(vystup)
 
-(stdin, stdout, stderr) = ssh_client.exec_command("conf t")
-(stdin, stdout, stderr) = ssh_client.exec_command("int lo0")
-(stdin, stdout, stderr) = ssh_client.exec_command("ip add 1.1.1.1 255.255.255.255")
+#(stdin, stdout, stderr) = ssh_client.exec_command("conf t")
+#(stdin, stdout, stderr) = ssh_client.exec_command("int lo0")
+#(stdin, stdout, stderr) = ssh_client.exec_command("ip add 1.1.1.1 255.255.255.255")
 
 
