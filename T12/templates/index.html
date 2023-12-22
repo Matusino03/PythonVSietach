@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Mikrotik REST GUI </title>
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Miktotik REST GUI</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>IP</th>
+            </tr>
+            {% for i in interfaces %}
+            <tr>
+                <td>{{i["name"]}}</td>
+                <td>{{i["status"]}}</td>
+                <td>{{i["ip"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br />
+        <form>
+            <label for="loop_name">Loop_name: </label>
+            <input type="text" name="loop_name">
+            <input type="submit" value="Vytvor loop"> 
+        </form>
+    </body>
+</html>

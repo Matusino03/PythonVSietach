@@ -1,6 +1,5 @@
 from paramiko import *
-
-IP = "158.193.152.167"
+IP = "158.193.152.166"
 PORT = 22
 USER = "admin"
 PASS = "Admin123"
