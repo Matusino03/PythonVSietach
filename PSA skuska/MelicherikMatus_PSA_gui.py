@@ -37,19 +37,19 @@ def connect_ssh():
     text_box.insert("end", output)
 
 # Vytvoríme nové okno pomocou tkinter
-root = Tk()
-root.title("SSH Client")
+gui = Tk()
+gui.title("SSH Client")
 
 # Vytvoríme textový riadok pomocou tkinter
-label = Label(root, text="Output:")
+label = Label(gui, text="Output:")
 label.pack()
 
-text_box = Text(root, height=10, width=100)
+text_box = Text(gui, height=10, width=100)
 text_box.pack()
 
 # Vytvoríme tlačidlo na pripojenie na server cez ssh a výpis výstupu pomocou tkinter
-button = Button(root, text="Connect", command=connect_ssh)
+button = Button(gui, text="Connect", command=connect_ssh)
 button.pack()
 
 # Zapneme cyklus eventov pre GUI
-root.mainloop()
+gui.mainloop()
